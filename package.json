@@ -2,7 +2,7 @@
   "name": "to-do",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://InaraACardoso.github.io/to-do/",
+  
 
   "scripts": {
     "dev": "next dev",

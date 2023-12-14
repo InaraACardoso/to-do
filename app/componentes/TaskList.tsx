@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useState } from 'react';
 import TaskItem from './TaskItem';
 import AddTaskForm from './AddTaskForm';
@@ -6,13 +6,14 @@ import AddTaskForm from './AddTaskForm';
 interface Task {
   id: number;
   title: string;
+  description: string;
 }
 
 const TaskList: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
 
-  const addTask = (title: string) => {
-    const newTask = { id: Date.now(), title };
+  const addTask = (title: string, description: string) => {
+    const newTask = { id: Date.now(), title, description };
     setTasks([...tasks, newTask]);
   };
 
@@ -20,8 +21,8 @@ const TaskList: React.FC = () => {
     setTasks(tasks.filter(task => task.id !== id));
   };
 
-  const editTask = (id: number, newTitle: string) => {
-    setTasks(tasks.map(task => task.id === id ? { ...task, title: newTitle } : task));
+  const editTask = (id: number, newTitle: string, newDescription: string) => {
+    setTasks(tasks.map(task => task.id === id ? { ...task, title: newTitle, description: newDescription } : task));
   };
 
   return (
@@ -35,7 +36,5 @@ const TaskList: React.FC = () => {
     </div>
   );
 };
-
-
 
 export default TaskList;

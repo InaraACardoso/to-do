@@ -1,10 +1,4 @@
 /** @type {import('next').NextConfig} */
-
-const basePath = '/dotalobbysquad'
-
-const nextConfig = {
-  basePath: basePath,
-  output: 'export',
-}
+const nextConfig = {}
 
 module.exports = nextConfig
